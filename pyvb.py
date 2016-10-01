@@ -23,3 +23,10 @@ def restart(name):
 	''' Restart virtualbox machine name '''
 	cmd = [ paths['VBoxManage'], 'controlvm', name, 'reset' ]
 	subprocess.call(cmd)
+
+def restartWithDelay(name, delay):
+	''' Restart virtualbox machine name, waiting between stop and start'''
+	from time import sleep
+	stop(name)
+	sleep(delay)
+	start(name)
