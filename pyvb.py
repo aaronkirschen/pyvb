@@ -19,3 +19,7 @@ def stop(name):
 	cmd = [ paths['VBoxManage'], 'controlvm', name, 'acpipowerbutton' ]
 	subprocess.call(cmd)
 	
+def restart(name):
+	''' Restart virtualbox machine name '''
+	cmd = [ paths['VBoxManage'], 'controlvm', name, 'reset' ]
+	subprocess.call(cmd)
