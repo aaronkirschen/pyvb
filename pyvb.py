@@ -14,4 +14,8 @@ def start(name):
 	cmd = [ paths['VBoxManage'], 'startvm', name ] 
 	subprocess.call(cmd)
 	
+def stop(name):	
+	''' Shutdown virtualbox machine name '''
+	cmd = [ paths['VBoxManage'], 'controlvm', name, 'acpipowerbutton' ]
+	subprocess.call(cmd)
 	
