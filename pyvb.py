@@ -7,4 +7,11 @@ paths = { \
 		}
 
 import subprocess
+
+def start(name):
+	''' Start virtualbox machine name '''
+	
+	cmd = [ paths['VBoxManage'], 'startvm', name ] 
+	subprocess.call(cmd)
+	
 	
